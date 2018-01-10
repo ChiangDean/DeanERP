@@ -1,0 +1,113 @@
+﻿@model DeanERP.Models.OrderFood.OrderStoreModel
+@{
+    ViewBag.Title = "註冊";
+}
+
+@{
+    ViewBag.Title = "CreateOrderStore";
+}
+
+@using (Html.BeginForm("CreateOrderStore", "OrderStore", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>建立新店家</h4>
+    <hr />
+
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_NAME, new { @class = "col-md-2 control-label required" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_NAME, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_STATUS, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.STORE_STATUS, (IEnumerable<SelectListItem>)ViewBag.LIST_STORE_SUB, new { @class = "form-control "})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_TYPE, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.STORE_TYPE, (IEnumerable<SelectListItem>)ViewBag.LIST_STORE_TYPE, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_COST, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_COST, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_DELIVERY, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.STORE_DELIVERY, (IEnumerable<SelectListItem>)ViewBag.LIST_STORE_DELIVERY, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_COPIES, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_COPIES, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_TEL1, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_TEL1, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_TEL2, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_TEL2, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_ADDRESS, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_ADDRESS, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_SUB, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.STORE_SUB, (IEnumerable<SelectListItem>)ViewBag.LIST_STORE_SUB, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_MENUURL, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_MENUURL, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.STORE_REMARK, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.STORE_REMARK, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="新增" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+    </script>
+}

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DeanERP.Models.OrderFood.OrderStoreModel>
+
+@{
+    ViewBag.Title = "ReadOrderStore";
+}
+
+<h2>ReadOrderStore</h2>
+<p>
+    @Html.ActionLink("建立新店家", "CreateOrderStore")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_DELIVERY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_BLICKLIST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_FREQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_FINALDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_TEL1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_SUB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_MENUURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.STORE_NAME, "ReadDetailOrderStore", new { storeName = item.STORE_NAME }) 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_DELIVERY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_BLICKLIST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_FREQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_FINALDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_TEL1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_SUB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_MENUURL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

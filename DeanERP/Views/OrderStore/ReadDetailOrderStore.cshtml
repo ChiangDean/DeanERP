@@ -1,0 +1,158 @@
+﻿@model DeanERP.Models.OrderFood.OrderStoreModel
+
+@{
+    ViewBag.Title = "ReadOrderStore";
+}
+
+<h2>ReadOrderStore</h2>
+
+<div>
+    <h4>OrderStoreModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            外送條件
+        </dt>
+
+            @if (@Model.STORE_COST != "0" && @Model.STORE_COPIES != "0")
+            {
+                <dd>@Model.STORE_COST 元或 @Model.STORE_COPIES 份即可外送</dd>
+            }
+            else if (@Model.STORE_COST != "0")
+            {
+                <dd>@Model.STORE_COST 元即可外送</dd>
+            }
+            else if (@Model.STORE_COPIES!="0")
+            {
+                <dd>@Model.STORE_COPIES 份即可外送</dd>
+            }
+            else
+            {
+                <dd>無</dd>
+            }
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_COST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_COST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_DELIVERY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_DELIVERY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_COPIES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_COPIES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_BLICKLIST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_BLICKLIST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_FREQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_FREQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_FINALDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_FINALDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_TEL1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_TEL1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_TEL2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_TEL2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_SUB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_SUB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_MENUURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_MENUURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_REMARK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_REMARK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
