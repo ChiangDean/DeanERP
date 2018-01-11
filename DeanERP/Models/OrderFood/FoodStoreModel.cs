@@ -8,6 +8,9 @@ using System.Web.Mvc;
 
 namespace DeanERP.Models.OrderFood
 {
+    /// <summary>
+    /// 2018/1/11 By Dean_Chiang
+    /// </summary>
     public class OrderStoreModel
     {
         [Display(Name = "店家代號")]

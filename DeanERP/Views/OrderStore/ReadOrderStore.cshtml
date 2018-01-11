@@ -8,6 +8,9 @@
 <p>
     @Html.ActionLink("建立新店家", "CreateOrderStore")
 </p>
+
+@using (Html.BeginForm())
+{
 <table class="table">
     <tr>
         <th>
@@ -43,7 +46,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink(item.STORE_NAME, "ReadDetailOrderStore", new { storeName = item.STORE_NAME }) 
+            @Html.ActionLink(@item.STORE_NAME, "/ReadDetailOrderStore", new { storeId = item.STORE_ID }) 
+            <!--<input type="submit" value="item.STORE_NAME" name="storeName" formaction="/OrderStore/ReadDetailOrderStore" formmethod="post" class="text_button">-->
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.STORE_TYPE)
@@ -70,10 +74,10 @@
             @Html.DisplayFor(modelItem => item.STORE_MENUURL)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "/EditOrderStore", new { storeId = item.STORE_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { storeId = item.STORE_ID })
         </td>
     </tr>
-}
-
+    }
 </table>
+}

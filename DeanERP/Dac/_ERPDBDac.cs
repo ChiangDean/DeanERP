@@ -13,23 +13,14 @@ using DeanERP.Models.SysModel;
 
 namespace DeanERP.Dac
 {
+    /// <summary>
+    /// 2018/1/10 By Dean_Chiang
+    /// </summary>
     public class _ERPDBDac: IDisposable
     {
-                /// <summary>
-        /// 
-        /// </summary>
         protected DataContext dc;
-        /// <summary>
-        /// 
-        /// </summary>
         protected StringBuilder sbSql;
-        /// <summary>
-        /// 
-        /// </summary>
         protected IList<SysSetModel> errorMsgs;
-        /// <summary>
-        /// 
-        /// </summary>
         public _ERPDBDac()
         {
             dc = new DataContext(ConfigurationManager.ConnectionStrings["DeanERPConnection"].ConnectionString);
@@ -40,7 +31,7 @@ namespace DeanERP.Dac
         }
 
         /// <summary>
-        /// 
+        /// 2018/1/10 By Dean_Chiang
         /// </summary>
         public void Dispose()
         {
@@ -48,6 +39,9 @@ namespace DeanERP.Dac
             dc.Dispose();
             GC.SuppressFinalize(this);
         }
+
+
+
         /// <summary>
         /// 取得系統內建訊息
         /// </summary>

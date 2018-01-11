@@ -12,7 +12,9 @@ namespace DeanERP.Models
     {
 
     }
-
+    /// <summary>
+    /// 2018/1/10 By Dean_Chiang
+    /// </summary>
     public class DropDownListModel
     {
         public string DROP_NAME { get; set; }

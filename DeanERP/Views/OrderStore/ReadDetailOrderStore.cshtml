@@ -153,6 +153,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "/EditOrderStore", new { storeId = @Model.STORE_ID }) |
+    @Html.ActionLink("Back to List", "/ReadOrderStore")
 </p>
